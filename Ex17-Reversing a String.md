@@ -1,48 +1,59 @@
 # Ex17 Reversing a String Using Stack Data Structure
-## DATE:16-11-2025
+## DATE: 20-11-2025
 ## AIM:
 To write a Java program that reverses an input string using a stack, without using built-in reverse functions.
 
 ## Algorithm
 1. Start the program.
-2. Create an empty stack of characters.
-3. Traverse the string and push each character onto the stack.
-4. Pop each element from the stack and append it to a new string.
-5. Display the reversed string.
-6. Stop the program.   
+2. Read the input string from the user.
+3. Create an empty stack of characters.
+4. Traverse the string and push each character onto the stack.
+5. Pop each character from the stack and append it to a new string — this gives the reversed string.
+6. Display the reversed string.
+7. Stop the program.
 
 ## Program:
-```
- /*
-Program to reverse an input string using a stack
+```java
+/*
+Program to reverses an input string using a stack
 Developed by: TIMMAPURAM YOGEESWAR
-RegisterNumber: 212223230233
+Register Number: 212223230233
 */
-import java.util.*;
 
-public class ReverseStringStack {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a string: ");
-        String str = sc.nextLine();
-        Stack<Character> stack = new Stack<>();
-        for (char ch : str.toCharArray())
+import java.util.Scanner;
+import java.util.Stack;
+
+public class ReverseStringWithStack {
+
+    public static String reverseString(String input) {
+         Stack<Character> stack=new Stack<>();
+        for(char ch:input.toCharArray())
+        {
             stack.push(ch);
+        }
+        StringBuilder rev=new StringBuilder();
+        while(!stack.isEmpty())
+        {
+            rev.append(stack.pop());
+        }
+        return rev.toString();
+    }
 
-        StringBuilder reversed = new StringBuilder();
-        while (!stack.isEmpty())
-            reversed.append(stack.pop());
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        String reversed = reverseString(input);
+        System.out.println(reversed);
 
-        System.out.println("Reversed string: " + reversed.toString());
-        sc.close();
+        scanner.close();
     }
 }
-*/
+
 ```
 
 ## Output:
+<img width="365" height="132" alt="image" src="https://github.com/user-attachments/assets/8ed4aa0c-0a74-4c41-bb99-e382b72198d7" />
 
-<img width="369" height="122" alt="image" src="https://github.com/user-attachments/assets/93d8acd1-ed39-4d89-86f6-f54037b514e9" />
 
 
 ## Result:
